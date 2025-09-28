@@ -35,7 +35,6 @@
 - Not a diagnostic or regulatory tool — outputs are for research and monitoring only  
 - Model performance may degrade on out-of-domain data, non-English text, or rare ADEs  
 - Clustering highlights patterns but does not imply causality  
-- Input data should be de-identified before use  
 
 ---
 
@@ -45,8 +44,6 @@
 - **Sentence Transformers** for embeddings  
 - **HDBSCAN & Agglomerative Clustering** for grouping ADEs  
 - **SHAP** for model interpretability  
-- **FastAPI** backend (if used)  
-- **MySQL** for data storage  
 - **Streamlit + Plotly** for dashboards  
 - **pandas, numpy, scikit-learn, tqdm** for data processing  
 
