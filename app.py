@@ -322,6 +322,23 @@ if st.button("Predict ADEs & DRUGs"):
         st.markdown(highlighted, unsafe_allow_html=True)
         st.dataframe(pd.DataFrame(merged_preds))
 
+        export_df = pd.DataFrame(merged_preds)
+
+        if 'modifier' not in export_df.columns:
+            export_df['modifier'] = export_df['text'].apply(lambda x: severity_scoring(x, full_text=example_text))
+
+        severity_order = {'high': 0, 'medium': 1, 'low': 2}
+        export_df['severity_sort'] = export_df['modifier'].str.lower().map(severity_order)
+        export_df = export_df.sort_values(['severity_sort', 'text']).drop(columns='severity_sort')
+
+        st.markdown("### Export Detected Entities (Sorted by Severity)")
+        st.download_button(
+            label="📥 Download Entities CSV",
+            data=export_df.to_csv(index=False).encode('utf-8'),
+            file_name="detected_entities_sorted.csv",
+            mime="text/csv"
+        )
+
     # -----------------------------
         # Tab 2: Cluster Visualization
         # -----------------------------
