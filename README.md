@@ -55,14 +55,23 @@
 - **Embeddings:** SentenceTransformer model  
 - **Evaluation Metrics:** F1, Precision, Recall on held-out annotated test set  
 
-*(Fill in your actual metrics here.)*
+<img width="769" height="327" alt="image" src="https://github.com/user-attachments/assets/bf7e7c9b-2a75-47ed-a92c-a3da1ea2bacc" />
+
 
 ---
 
 ## ⚡ Quick Start  
+
+Download and Unzip the Gen_AI_App project folder
+Change directory to outputs and run the following command.
+streamlit run app.py
+
+Else just add the trained weights(safetensors file and add to model file)
 Clone this repository and install dependencies:
 
 ```bash
 git clone https://github.com/yourusername/ADEGuard.git
 cd ADEGuard
 pip install -r requirements.txt
+streamlit run app.py
+
