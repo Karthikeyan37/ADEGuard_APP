@@ -63,6 +63,7 @@
 ## ⚡ Quick Start  
 
 Download the model files which includes pretrained weights from link:https://drive.google.com/drive/folders/1BA2rh6-vqJxVFfnT-ek1iXGIUYF2VDhR?usp=drive_link
+Also Dataset:https://drive.google.com/file/d/1z0MwP1yIeLR6D-RKc1uj22Rmgt-9d7rE/view?usp=sharing
 Store it along with the app.py file present directory and run the following command.
 streamlit run app.py
 
