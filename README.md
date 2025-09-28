@@ -62,8 +62,8 @@
 
 ## ⚡ Quick Start  
 
-Download and Unzip the Gen_AI_App project folder
-Change directory to outputs and run the following command.
+Download the model files which includes pretrained weights from link:https://drive.google.com/drive/folders/1BA2rh6-vqJxVFfnT-ek1iXGIUYF2VDhR?usp=drive_link
+Store it along with the app.py file present directory and run the following command.
 streamlit run app.py
 
 Else just add the trained weights(safetensors file and add to model file)
@@ -71,7 +71,7 @@ Clone this repository and install dependencies:
 
 ```bash
 git clone https://github.com/yourusername/ADEGuard.git
-cd ADEGuard
+cd outputs
 pip install -r requirements.txt
 streamlit run app.py
 
