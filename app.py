@@ -20,7 +20,8 @@ with logo_col:
 with title_col:
     st.title("ADEGuard – AI-Powered ADE & DRUG Detection")
 
-MODEL_PATH = "./biobert_ade_ner_large"
+#MODEL_PATH = "./biobert_ade_ner_large"
+MODEL_PATH = "./checkpoint-7500"
 
 # -----------------------------
 # 2. Model Loading (cached)
@@ -413,6 +414,7 @@ if st.button("Predict ADEs & DRUGs"):
         st.markdown("**Token-level Confidence Bar Chart**")
         shap_df = pd.DataFrame({"Token": merged_tokens, "Importance": merged_scores})
         st.bar_chart(shap_df.set_index("Token"))
+
 
 
 
