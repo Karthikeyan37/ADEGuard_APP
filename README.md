@@ -8,8 +8,9 @@
 
 ---
 
-## 📸 Screenshots  
-_Add screenshots or gifs of your dashboard here to make the repo visually appealing._
+## 📸 Application Interface
+<img width="1897" height="959" alt="image" src="https://github.com/user-attachments/assets/0958f51f-6384-4031-894b-2ce4151ac36f" />
+
 
 ---
 
