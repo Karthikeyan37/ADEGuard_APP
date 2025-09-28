@@ -1,0 +1,29 @@
+# Core Python scientific stack
+numpy
+pandas
+tqdm
+
+# NLP / Transformers
+transformers
+datasets
+sentence-transformers
+spacy
+
+# Model training utils
+scikit-learn
+hdbscan
+
+# Explainability
+shap
+
+# Visualization
+streamlit
+plotly
+
+# (Optional) If you are using GPU
+torch
+
+# (Optional but common in NER fine-tuning)
+accelerate
+
+# JSON and Pathlib are built-in, no need to include
