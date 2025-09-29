@@ -181,6 +181,8 @@ def cluster_entities(preds, example_text, cluster_method="hdbscan"):
         p['age'] = age_val
         p['age_group'] = age_group
 
+    
+
     texts=[p['text'] for p in preds]
     modifiers=[2 if semantic_severity(t)=="high" else 1 if semantic_severity(t)=="medium" else 0 for t in texts]
     emb=sbert_model.encode(texts)
@@ -246,7 +248,7 @@ st.markdown(
 # Text area without label
 example_text = st.text_area(
     "",  # leave default label empty
-    "Age 45 has severe headache after Shingrix. Age 15 has cold after anthrax. Age 43 has severe rash after taking pneumovax",
+    "Age 45 has severe headache after Shingrix. Age 13 has cold after anthrax. Age 43 has severe rash after taking pneumovax",
     height=150
 )
 
@@ -320,9 +322,10 @@ if st.button("Predict ADEs & DRUGs"):
         #         p.pop(col, None)
 
         st.markdown(highlighted, unsafe_allow_html=True)
-        st.dataframe(pd.DataFrame(merged_preds))
+        df_ui = pd.DataFrame(merged_preds).drop(columns=['age', 'cluster','age_group'], errors='ignore')
+        st.dataframe(pd.DataFrame(df_ui))
 
-        export_df = pd.DataFrame(merged_preds)
+        export_df = pd.DataFrame(df_ui)
 
         if 'modifier' not in export_df.columns:
             export_df['modifier'] = export_df['text'].apply(lambda x: severity_scoring(x, full_text=example_text))
